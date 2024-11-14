@@ -8,16 +8,18 @@ int main()
     int i,j,indexmax,temp,tab[N]={12,124,5,45,4};
     for(j=0; j<N-1; j++){
 
-            indexmax = i;
+            indexmax = 0;
     for(i=0; i<N-j-1; i++){
-            if(tab[indexmax]<tab[i+1]){
+            if(indexmax!= i+1 && tab[indexmax]<tab[i+1]){
                 indexmax = i+1;
+
+                printf("indexmax = %d\n", indexmax);
 
     }
             }
               temp =  tab[N-j-1];
               tab[N-j-1] = tab[indexmax] ;
-              tab[indexmax]=tab[N-j-1];
+              tab[indexmax]=temp;
     }
 
     for(i=0; i<N; i++){
